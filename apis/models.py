@@ -1,9 +1,24 @@
 from django.db import models
 
 # Create your models here.
+
 class StudentModel(models.Model):
-    title= models.CharField(max_length=200)
-    description = models.TextField()
+    unid = models.CharField(max_length=50,default=0 )
+    name = models.CharField(max_length=100,default='')
+    phone = models.BigIntegerField(default=0)
+    gender = models.CharField(max_length=10,default='')
+    father = models.CharField(max_length=40,default='')
+    mother = models.CharField(max_length=40,default='')
+    address = models.CharField(max_length=100,default='')
+    group=models.CharField(max_length=5,default='')
+    age=models.IntegerField(default=0)
+    dob = models.CharField(max_length=12,default='')
+    speechTherapy = models.IntegerField(default=0 )
+    therapy= models.IntegerField(default= 0)
+    transportation = models.IntegerField(default=0 )
+    admissionCharge = models.IntegerField(default=0 )
+    monthlyCharge = models.IntegerField(default=0 )
+    snacks = models.IntegerField(default=0 )
 
     def __str__(self):
-        return self.title
+        return self.name

@@ -6,4 +6,4 @@ class StudentSerializers(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = StudentModel
-        fields = ('title','description')
+        fields = ('unid','name','phone','gender','father','mother','address','group','age','dob','speechTherapy','therapy','transportation','admissionCharge','monthlyCharge','snacks')
