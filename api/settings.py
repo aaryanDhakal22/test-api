@@ -27,8 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("secret")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ["djangostudenttestapi.herokuapp.com"]
+DEBUG = True
+ALLOWED_HOSTS = ["djangostudenttestapi.herokuapp.com","localhost"]
 
 
 # Application definition

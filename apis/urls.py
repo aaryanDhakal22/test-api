@@ -1,14 +1,11 @@
-from django.urls import include, path
+from django.urls import path
 
-from rest_framework import routers
-
-from .views import * 
-
-router = routers.DefaultRouter()
-
-router.register(r'students',StudentViewSet)
+from .views import *
 
 urlpatterns = [
-    path('',include(router.urls)),
-    path('api-auth/',include('rest_framework.urls'))
+    path('student/',student_list, name="student_list"),
+    path('student/details/<str:unid>',student_detail,name="student_detail"),
+    path('transaction/<str:unid>',transaction_list,name='transaction_list'),
+    # path('transaction/details/<str:date>',transaction_detail,name='transaction_list'),
+
 ]
