@@ -25,8 +25,9 @@ class StudentModel(models.Model):
         return self.name
 
 class TransactionModel(models.Model):
-    studentunid= models.CharField(max_length=50,default=0,primary_key=True )
-    date = models.CharField(max_length=12,default='')
+    studentunid= models.CharField(max_length=50,default=0 )
+    transactionunid = models.CharField(max_length=50,default=0,primary_key=True)
+    date = models.CharField(max_length=15,default='')
     paidAmount = models.IntegerField(default=0)
     forMonth = models.CharField(max_length=20)
     speechTherapy = models.IntegerField(default=0 )
@@ -35,9 +36,10 @@ class TransactionModel(models.Model):
     admissionCharge = models.IntegerField(default=0 )
     monthlyCharge = models.IntegerField(default=0 )
     snacks = models.IntegerField(default=0 )
+    paid=models.BooleanField(default=False)
 
 
     def __str__(self):
-        return str(self.date)
+        return str(self.transactionunid)
 
 

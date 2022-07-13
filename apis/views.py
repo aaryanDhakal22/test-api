@@ -57,13 +57,11 @@ def student_detail(request,unid):
 
 
 @api_view(['GET','POST'])
-def transaction_list(request,unid):
+def transaction_list(request,studentunid):
     if request.method == 'GET':
         transactions = TransactionModel.objects.all()
-
-        unid = request.GET.get('unid',None)
-        if unid is not None:
-            transactions = transactions.filter(unid__icontains=unid)
+        if studentunid is not None:
+            transactions = transactions.filter(studentunid__icontains=studentunid)
         transaction_serializer = TransactionSerializers(transactions,many=True)
         return JsonResponse(transaction_serializer.data,safe=False)
 

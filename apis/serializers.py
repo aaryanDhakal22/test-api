@@ -37,6 +37,6 @@ class TransactionSerializers(serializers.ModelSerializer):
             'transportation',
             'admissionCharge',
             'monthlyCharge',
-            'snacks'
-
+            'snacks',
+            'paid'
         )
